@@ -12,7 +12,41 @@ body {
   color: #333;
   line-height: 1.6;
 }
+/* Hide checkbox and icon by default */
+.menu-toggle {
+  display: none;
+}
 
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #222;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  /* Show menu when checkbox is checked */
+  .menu-toggle:checked + .menu-icon + .nav .nav-links {
+    display: flex;
+  }
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -265,3 +299,4 @@ ul {
     font-size: 2rem;
   }
 }
+
